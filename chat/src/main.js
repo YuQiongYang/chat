@@ -4,7 +4,7 @@ import VueSocketio from 'vue-socket.io';
 import socketio from 'socket.io-client';
 
 Vue.use(new VueSocketio({
-  connection: 'ws://192.168.0.33:88'
+  connection: 'ws://192.168.0.33:3005'
 }));    
 
 new Vue({

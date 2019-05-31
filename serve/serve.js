@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 app.use(express.static(path.join(__dirname, '../')));
-http.listen(88);
+http.listen(3005);
 
 
 let arr = []
