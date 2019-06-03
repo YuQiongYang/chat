@@ -1,5 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
+function resolve (dir) {
+  return path.join(__dirname, './dist', dir)
+  }
 
 module.exports = {
   entry: './src/main.js',
@@ -57,8 +60,18 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        // loader: 'babel-loader',
+        use: [{
+          loader: 'babel-loader',
+          options: {
+             presets: ['es2015']
+          }
+        }],
+        // include: [
+        //   resolve('src'),
+        //   resolve('test'),
+        //   resolve('node_modules/vue-socket.io/dist/vue-socketio.js')
+        // ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
